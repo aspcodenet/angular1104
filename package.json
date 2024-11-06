@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
-    "buildprod": "ng build --deploy-url /angular1104/",
+    "buildprod": "ng build --base-href /angular1104/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
