@@ -1,0 +1,46 @@
+<p>contact works!</p>
+<section className="contact" id="contact">
+    <h1>Contact us!</h1>
+    <form  [formGroup]="userForm" (ngSubmit)="submitForm()">
+      <div className="row">
+        <label htmlFor="firstName">First Name</label>
+        <input
+          id="firstName"
+          name="firstName"
+          formControlName="firstName"
+          type="text"
+      />
+      <div *ngIf="userForm?.get('firstName')?.invalid " class="error">
+        Name is invalid
+      </div>      
+    </div>
+      <div className="row">
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          id="lastName"
+          formControlName="lastName"
+          name="lastName"
+          type="text"
+        />
+       <!-- {formik.errors.lastName ? <div className="error">{formik.errors.lastName}</div> : null} -->
+       </div>
+      <div className="row">
+        <label htmlFor="email">Email Address</label>
+        <input
+          id="email"
+          formControlName="email"
+          name="email"
+          type="email"
+        />
+       <!-- {formik.errors.email ? <div className="error">{formik.errors.email}</div> : null} -->
+       </div>
+      <div className="row">
+          <label htmlFor="txt">Message</label>
+          <textarea
+            formControlName="txt"
+            id="txt"
+            name="txt"></textarea>
+      </div>
+      <button class="storebutton" type="submit">Submit</button>          
+    </form>
+</section>
